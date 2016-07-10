@@ -1,0 +1,5 @@
+{% set dhclient = salt['grains.filter_by']({
+    'FreeBSD': {
+        'config': '/etc/dhclient.conf',
+        }
+}, merge=salt['pillar.get']('dhclient:lookup')) %}

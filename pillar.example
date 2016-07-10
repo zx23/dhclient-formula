@@ -1,0 +1,15 @@
+dhclient:
+    domain_name:
+        supersede:
+            - zx23.net
+            - aknet.zx23.net
+    domain_name_servers:
+        supersede:
+            - 127.0.0.1
+    aliases:
+        - interface: em0
+          fixed_address: 10.23.23.2
+          subnet_mask: 255.255.255.255
+        - interface: em0
+          fixed_address: 10.23.23.3
+          subnet_mask: 255.255.255.255
