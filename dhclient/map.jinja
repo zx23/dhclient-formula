@@ -1,5 +1,12 @@
 {% set dhclient = salt['grains.filter_by']({
+    'default': {
+        'config': '/etc/dhcp/dhclient.conf'
+    },
+    'Debian': {
+    },
+    'RedHat': {
+    },
     'FreeBSD': {
         'config': '/etc/dhclient.conf',
-        }
-}, merge=salt['pillar.get']('dhclient:lookup')) %}
+    },
+}, grain='os_family', merge=salt['pillar.get']('dhclient:lookup'), base='default') %}
